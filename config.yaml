@@ -1,0 +1,32 @@
+camera:
+  index: 0
+  width: 416
+  height: 312
+  rotate_deg: 0
+
+detector:
+  model_path: "yolov8n.pt"
+  conf_threshold: 0.35
+  iou_threshold: 0.45
+  labels_map:
+    car: vehicle
+    truck: vehicle
+    bus: vehicle
+
+distance:
+  focal_length: 700
+  known_object_width: 0.5
+
+announce:
+  min_distance_m: 2.1
+  debounce_frames: 2
+  avoid_repeat_seconds: 3
+
+edge_fallback:
+  enabled: true
+  center_region_ratio: 0.35
+  edge_density_threshold: 0.08
+
+general:
+  fps_target: 10
+  tts_rate: 150
