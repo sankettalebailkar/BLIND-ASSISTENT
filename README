@@ -1,0 +1,38 @@
+# Blind Person Assistant
+
+The Blind Person Assistant is a real-time, low-cost assistive vision system designed to help visually impaired individuals navigate safely. It runs on a Raspberry Pi 5 using the Pi Camera V2 and performs object detection, edge-based obstacle detection, distance estimation, and offline voice feedback.
+
+## Features
+- Real-time YOLOv8 object detection
+- Detects people, vehicles, poles, stairs, potholes, animals, etc.
+- Edge-detection fallback for unrecognized obstacles (walls)
+- Offline text-to-speech (no internet required)
+- Distance estimation based on bounding box size
+- Debounce logic to avoid repeated announcements
+- Works headless (no screen)
+- Optimized for Raspberry Pi 5 + Pi Camera V2
+
+## Tech Stack
+- Python  
+- YOLOv8 (Ultralytics)  
+- OpenCV  
+- Pyttsx3 (Offline TTS)  
+- Raspberry Pi 5  
+- Pi Camera V2  
+
+## How It Works
+1. The camera captures frames.  
+2. YOLOv8 detects objects in real-time.  
+3. Distance estimator calculates how far each object is.  
+4. If no objects are detected, edge detection checks for walls/stairs.  
+5. The system announces only important hazards through offline TTS.  
+
+## Project Structure
+- `src/` : Main Python scripts  
+- `scripts/` : Install + service scripts  
+- `models/` : YOLO model files (uploaded via Releases)  
+- `examples/` : Demo video link  
+- `docs/` : Documentation files  
+
+## Demo Video
+Link: https://drive.google.com/file/d/10UG3y7j4HOLcWFhs2Dfdn6d2S5o9VOnz/view?usp=sharing
